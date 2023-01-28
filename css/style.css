@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap'); 
+
+:root{
+  /* COLORS */
+  --blue-dark:   #006ea6;
+  --blue-light:  #4974a4;
+  --black-light: #555956;
+
+  /* FONTS */
+  --font-primary: Arial, Helvetica, sans-serif; 
+  --font-secondary: sans-serif; 
+  --font-poppins: 'Poppins', sans-serif; 
+}
+
+body{
+  background:#ddd;
+  position:relative;
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family:var(--font-poppins);
+  letter-spacing:.3px;
+}
+
+h1,h2,h3,h4,h5{ 
+  margin-top:5px; 
+}
+
+
+header{
+  padding:10px 10px 60px 10px;
+  background: #004d64;
+  color:#fff;
+  
+}
+
+.header__inner{
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard{
+  max-width:800px;
+  margin:auto;
+  padding:30px 10px;
+}
+
+/* ==== AMOUNTS SECTION ==== */
+  
+.amounts{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin:-70px 0 20px 0;
+}
+
+.amounts__card{
+  margin:10px;
+  background:#fff;
+  padding:15px 10px;
+  flex:1;
+}
+
+.amounts .saldo__amount{
+  color:#044e7c;
+}
+
+.amounts .deposits__amount{
+  color:green;
+}
+
+.amounts .widthdraws__amount{
+  color:red;
+}
+
+
+/* ==== NEW TRANSACTION BUTTON ==== */
+.new__transaction{
+  padding:10px;
+  margin:20px 0 0 0;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new__transaction button{
+  padding:10px;
+  border:none;
+  background:#004d64;
+  color:#fff;
+  cursor: pointer;
+}
+
+.new__transaction button:hover{
+  opacity: .8;
+}
+
+
+/* ==== TRANSACIONS SECTION ====  */
+
+.transactions{
+  padding:10px;
+  background:#fff;
+  margin-bottom: 30px;
+  height: 380px;
+  overflow-y: scroll;
+}
+
+.transaction__item-card{
+  padding:5px;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-bottom:7px;
+}
+
+.bullet-spending{
+  padding-right:5px;
+  color: red;
+  font-size: 22px;
+}
+
+.bullet-deposit{
+  padding-right:5px;
+  color: green;
+  font-size: 22px;
+}
+
+
+.transaction__item-card:nth-child(odd){
+  background:#d2d1cd;
+}
+
+.item__card-amount, .item__card-date{
+  text-align:end;
+}
+
+.item__card-date{
+  text-transform:capitalize;
+}
+
+/* ==== ADD TRANSACTION MODAL ====  */
+
+.add__transaction{
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,.8);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.add__transaction-modal{
+  width:300px;
+  padding:10px;
+  background:#fff;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius:10px;
+}
+
+.add__transaction-modal-title{
+  padding:10px;
+  text-align: center;
+}
+
+.add__transaction form{
+  width:100%;
+  padding:20px;
+}
+
+.add__transaction form input,
+.add__transaction form select{
+  width:100%;
+  padding:10px;
+  margin-top: 3px;;
+}
+
+.add__transaction form input[type=submit]{
+  background:#004d64;
+  color:#fff;
+  border:none;
+  cursor: pointer;
+}
+
+.error__message{
+  width:100%;
+  text-align: center;
+  color: #ae3020;
+  display: none;
+}
+
+.close__modal-button{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px;
+  text-align: center;
+  background:#ae3020;
+  color:#fff;
+  border:none;
+  cursor: pointer;
+  width:100%;
+}
+
+.message__container{
+  width: 200px;
+  height:50px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,50%);
+  background:green;
+  color:#fff;
+  box-shadow: 3px 5px 43px rgba(0,0,0,.7);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  visibility:hidden;
+}
+
+
+@media(max-width:480px){
+  .amounts{
+    display:block;
+  }
+
+  .add_transaction{
+    text-align: center;
+  }
+
+  .add_transaction button{
+    font-size: 18px;
+  }
+
+  .transaction__item-card{
+    padding:10px;
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .item__card-amount, .item__card-date{
+    text-align:left;
+  }
+}

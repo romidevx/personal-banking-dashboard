@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Banking Dashboard</title>
+  </head>
+  <body>
+    <!-- <div id="app"></div> -->
+
+    <header>
+      <div class="header__inner">
+        <h2 class="header__title">E-Banking</h2>
+        <h4 class="today"><!-- TODAY'S DATE --></h4>            
+      </div>
+    </header>
+  
+    <div class="dashboard">
+  
+      <!-- DISPLAY AMOUNTS STATUS -->
+      <section class="amounts"></section>
+      
+  
+      <!-- BUTTON ADD NEW TRANSACTION -->
+      <section class="new__transaction">
+        <button class="new__transaction-btn">Add</button>
+  
+        <div class="filter__transactions">
+          <button class="filter__transactions-all">All</button>
+          <button class="filter__transactions-deposits">Deposits</button>
+          <button class="filter__transactions-spendings">Expenses</button>
+        </div>
+      </section>
+    
+    
+      <!-- DISPLAY ALL TRANSACTIONS -->
+      <section class="transactions"></section>
+  
+    </div>
+  
+    <!-- ADD NEW TRANSACTION MODAL -->
+    <section class="add__transaction">
+  
+      <div class="add__transaction-modal">
+        <h4 class="add__transaction-modal-title">NEW TRANSACTION</h4>
+  
+        <form id="form">
+          <!-- TRANSACTION TITLE -->
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Enter transaction title.." required="">
+          <br><br>
+  
+          <!-- TRANSACTION TYPE -->
+          <!-- <h5 style="padding-bottom:5px;">Choose Transaction Type</h5> -->
+          <label for="title">Type</label>
+          <select name="category" id="category" required="">
+            <option selected="" disabled=""> -- Choose one -- </option>
+            <option value="deposit">Deposit</option>
+            <option value="spending">Spending</option>
+          </select>
+          <br><br>
+  
+          <!-- TRANSACTION AMOUNT -->
+          <label for="title">Amount</label>
+          <input type="number" id="amount" name="amount" placeholder="Ex: 50, 25, 1200" required="">
+          <br><br>
+  
+          <h4 class="error__message">** Please fill all fields **</h4>
+  
+          <!-- ADD NEW TRANSACTION BUTTON -->
+          <input type="submit" value="SAVE TRANSACTION">
+  
+          <button class="close__modal-button">CANCEL</button>
+        </form>
+  
+  
+      </div>
+    </section>
+  
+    <section class="message__container">
+      <div class="message">
+        <h4>Transaction added ✔</h4>
+      </div>
+    </section>
+  
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
